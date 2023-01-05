@@ -10,6 +10,11 @@
 </template>
 
 <script setup>
+    // перед тем как эта страница страница отобразится, санчала отработает функция в middleware, файл которой пишется ниже тут...
+    definePageMeta({
+        middleware: ["auth"]
+    })
+
     const { data: f } = await useFetch('/api/ninja')
     const { data: one } = await useFetch('/api/currency/EUR')
 </script>
